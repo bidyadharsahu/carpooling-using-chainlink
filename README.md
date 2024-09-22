@@ -1,3 +1,6 @@
+-----Backend------
+npm start
+
 -----Blockchain------
 
 npm install --save-dev hardhat
