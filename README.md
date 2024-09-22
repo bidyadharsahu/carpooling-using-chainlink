@@ -11,8 +11,11 @@ npx hardhat node
 npx hardhat run ./scripts/deploy.js --network localhost (in  a separate console)
 
 ----Frontend-------
+
 npm install
+
 npm install ethers
+
 npm start
 
 
