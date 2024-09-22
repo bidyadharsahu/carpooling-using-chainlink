@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //import { ethers } from 'ethers';
 import abi from './Carpooling.json';  // Save your contract's ABI as JSON
+import { Web3Provider } from "@ethersproject/providers";
 const ethers = require("ethers");
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
 
     const connectWallet = async () => {
         if (window.ethereum) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            //const provider = new ethers.providers.Web3Provider(window.ethereum);
+			const provider = new Web3Provider(window.ethereum);
             await provider.send("eth_requestAccounts", []);
             const signer = provider.getSigner();
             const carpoolingContract = new ethers.Contract('0x5fbdb2315678afecb367f032d93f642f64180aa3', abi, signer);
