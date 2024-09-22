@@ -12,5 +12,9 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "hardhat": "^2.22.11"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^1.2.0",
+    "@nomicfoundation/solidity-analyzer-win32-x64-msvc": "^0.1.2"
   }
 }
