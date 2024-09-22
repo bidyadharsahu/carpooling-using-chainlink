@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ethers } from 'ethers';
-import CarpoolingABI from './CarpoolingABI.json';  // Save your contract's ABI as JSON
+//import { ethers } from 'ethers';
+import abi from './Carpooling.json';  // Save your contract's ABI as JSON
+const ethers = require("ethers");
 
 function App() {
     const [contract, setContract] = useState(null);
@@ -12,7 +13,7 @@ function App() {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             await provider.send("eth_requestAccounts", []);
             const signer = provider.getSigner();
-            const carpoolingContract = new ethers.Contract('YOUR_CONTRACT_ADDRESS', CarpoolingABI, signer);
+            const carpoolingContract = new ethers.Contract('0x5fbdb2315678afecb367f032d93f642f64180aa3', abi, signer);
             setContract(carpoolingContract);
         } else {
             alert("Please install MetaMask to interact with this DApp!");
