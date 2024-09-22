@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/carpooling', { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use('/api/rides', rideRoutes);
 app.use('/api/users', userRoutes);
